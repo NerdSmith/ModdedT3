@@ -1,6 +1,6 @@
 package com.pj.ns;
 
-public class Figure {
+public abstract class Figure {
     double x0;
     double y0;
     double a;
@@ -11,7 +11,5 @@ public class Figure {
         this.a = a;
     }
 
-    public boolean isPointAbove(double x, double y) {
-        return true;
-    }
+    public abstract boolean isPointAbove(double x, double y);
 }
