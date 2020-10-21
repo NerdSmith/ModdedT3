@@ -22,14 +22,14 @@ public class Main {
         return scanner.next();
     }
 
-    private static Figure readCoefficients(String formula) {
+    private static Coefficients readCoefficients(String formula) {
         Scanner scan = new Scanner(System.in);
 
         System.out.printf("%s \nEnter x0, y0, a: ", formula);
         double x0 = scan.nextDouble();
         double y0 = scan.nextDouble();
         double a = scan.nextDouble();
-        return new Figure(x0, y0, a);
+        return new Coefficients(x0, y0, a);
     }
 
     private static void printWhereIsThePoint(Figure[] arrOfFigures, String[] arrOfNameOfFigures, int numberOfFigures,
@@ -54,18 +54,18 @@ public class Main {
 
             switch (figureType) {
                 case "Line": {
-                    Figure figureCoefficients = readCoefficients("y = a * (x - x0) + y0");
+                    Coefficients figureCoefficients = readCoefficients("y = a * (x - x0) + y0");
                     arrOfFigures[i] = new Line(figureCoefficients.x0, figureCoefficients.y0, figureCoefficients.a);
                     break;
                 }
                 case "HorizontalParabola": {
-                    Figure figureCoefficients = readCoefficients("x = a * (y - y0) + x0");
+                    Coefficients figureCoefficients = readCoefficients("x = a * (y - y0) + x0");
                     arrOfFigures[i] = new HorizontalParabola(figureCoefficients.x0, figureCoefficients.y0,
                             figureCoefficients.a);
                     break;
                 }
                 case "VerticalParabola": {
-                    Figure figureCoefficients = readCoefficients("y = a * (x - x0) + y0");
+                    Coefficients figureCoefficients = readCoefficients("y = a * (x - x0) + y0");
                     arrOfFigures[i] = new VerticalParabola(figureCoefficients.x0, figureCoefficients.y0,
                             figureCoefficients.a);
                     break;
